@@ -98,16 +98,19 @@ consistency, and information coverage.
     \midrule
     Fluency              & Source-dependent & Natural prose \\
     Factual consistency  & Always faithful  & May hallucinate \\
-    ROUGE score          & Higher (n-gram copy) & Lower (paraphrase) \\
+    ROUGE score          & Lower (generic extractor) & Higher (fine-tuned on same corpus) \\
     BERTScore            & Moderate         & Higher (semantic) \\
     Compute              & CPU, ms/article  & GPU, seconds/article \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-TextRank achieves higher ROUGE because it copies verbatim n-grams from the
-source (and reference summaries are written based on the same source).
-BART's lower ROUGE but higher BERTScore illustrates the known tension between
-n-gram metrics and semantic quality.
+Contrary to the common expectation that extractive methods achieve higher ROUGE,
+BART-large-cnn surpasses TextRank on all ROUGE metrics in this experiment.
+This is because BART was already fine-tuned on the CNN/DailyMail corpus:
+its generated summaries closely mirror the style and vocabulary of the reference
+highlights, boosting n-gram overlap.
+BART's simultaneously higher BERTScore further confirms that the abstractive
+output is semantically richer than the generic extractive baseline.
 For production news summarisation, BART is the preferred method; TextRank
 remains a strong, training-free baseline for resource-constrained settings.

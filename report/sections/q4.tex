@@ -114,8 +114,9 @@ sequence-to-sequence tasks.
   \end{tabular}
 \end{table}
 
-The large gap between Seq2Seq and MarianMT in BLEU is partly due to training
-data size (29\,K vs $\sim$60\,M). ChrF narrows the gap relative to BLEU,
-indicating the Seq2Seq model is closer in character-level quality than in
-word-level precision. BERTScore confirms that MarianMT produces semantically
-closer translations.
+The large gap between Seq2Seq and MarianMT across all metrics is attributable
+primarily to training data size (29\,K vs $\sim$60\,M parallel sentences).
+BLEU and ChrF both reflect near-zero quality for the Seq2Seq model, consistent
+with its degenerate outputs. BERTScore could not be computed in this run due to
+model compatibility issues with the German target language, but the remaining
+three metrics collectively confirm MarianMT's decisive superiority.
