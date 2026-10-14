@@ -9,7 +9,7 @@ Then upload Q1_Text_Classification.ipynb to Google Colab (Runtime → T4 GPU).
 import json
 import os
 
-OUTPUT = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+OUTPUT = os.path.join(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Q1_Text_Classification"),
                       "Q1_Text_Classification.ipynb")
 
 # ── Helper functions ──────────────────────────────────────────────────────────

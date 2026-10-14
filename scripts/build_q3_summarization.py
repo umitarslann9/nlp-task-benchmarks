@@ -6,7 +6,7 @@ Generates: Q3_Summarization.ipynb
 """
 import json, os
 
-OUTPUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Q3_Summarization.ipynb")
+OUTPUT = os.path.join(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Q3_Summarization"), "Q3_Summarization.ipynb")
 
 def cc(src, id_): return {"cell_type":"code","execution_count":None,"id":id_,"metadata":{},"outputs":[],"source":src}
 def mc(src, id_): return {"cell_type":"markdown","id":id_,"metadata":{},"source":src}

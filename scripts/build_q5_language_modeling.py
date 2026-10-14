@@ -6,7 +6,7 @@ Generates: Q5_Language_Modeling.ipynb
 """
 import json, os
 
-OUTPUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Q5_Language_Modeling.ipynb")
+OUTPUT = os.path.join(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Q5_Language_Modeling"), "Q5_Language_Modeling.ipynb")
 
 def cc(src, id_): return {"cell_type":"code","execution_count":None,"id":id_,"metadata":{},"outputs":[],"source":src}
 def mc(src, id_): return {"cell_type":"markdown","id":id_,"metadata":{},"source":src}
